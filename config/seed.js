@@ -17,10 +17,11 @@ module.exports.seed = {
       user: {
         faker: {
           format: {
-            username: "internet.userName",
-            name: "name.firstName",
-            password: "internet.password"
+            username: "{{internet.userName}}",
+            names: "{{name.firstName}} {{name.lastName}}",
+            password: "{{internet.password}}"
           },
+          locale: "es_MX",
           quantity: 10
         },
         migrate: 'drop'
