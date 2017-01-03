@@ -1,28 +1,45 @@
 module.exports.seed = {
   locations : {
     test: {
-      account: {
-        data: [
+      user: {
+        scheme: [
           {
-            name: "Test",
-            street: "Downtown Abey"
-          },
-          {
-            name: "Test1",
-            street: "Downtown Abey"
+            data: {
+              name: "juan paco",
+              lastName: "pedro de la mar"
+            }
           }
         ],
-        migrate : 'drop'
+        migrate: 'drop'
       },
+      player: {
+        scheme: [
+          {
+            data: {
+              username: "sailor",
+              password: "1234567890987654321"
+            },
+            relations: {
+              user: {
+                name: "juan paco"
+              }
+            }
+          }
+        ],
+        migrate: 'drop'
+      }
+    },
+    faker: {
       user: {
-        faker: {
-          format: {
-            username: "{{internet.userName}}",
-            names: "{{name.firstName}} {{name.lastName}}",
-            password: "{{internet.password}}"
-          },
-          locale: "es_MX",
-          quantity: 10
+        scheme: {
+          faker: {
+            format: {
+              name: "{{name.firstName}}",
+              lastName: "{{name.lastName}}"
+            },
+            locale: 'es_MX',
+            quantity: 10
+          }
         },
         migrate: 'drop'
       }
