@@ -19,7 +19,7 @@ module.exports.seed = {
               username: "sailor",
               password: "1234567890987654321"
             },
-            relations: {
+            oneTo: {
               user: {
                 name: "juan paco"
               }
