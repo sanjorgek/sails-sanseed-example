@@ -12,6 +12,19 @@ module.exports.seed = {
         ],
         migrate: 'drop'
       },
+      gun: {
+        scheme: {
+          faker: {
+            format: {
+              name: "{{company.companyName}}",
+              ammo: "{{random.number}}"
+            },
+            locale: 'es_MX',
+            quantity: 10
+          }
+        },
+        migrate: 'drop'
+      },
       player: {
         scheme: [
           {
@@ -22,6 +35,9 @@ module.exports.seed = {
             oneTo: {
               user: {
                 name: "juan paco"
+              },
+              gun: {
+                ammo: {'>': 15}
               }
             }
           }

@@ -13,7 +13,14 @@ describe('Associations', function() {
   });
   describe('One to Many', function() {
     it('should create a player with many guns', function(done) {
-      done();
+      Player.find({})
+      .populate('gun')
+      .exec(function(err, playerFounded) {
+        if(err) return done(err);
+        if(playerFounded==[]) return done(new Error('Missing record'));
+        if(!playerFounded[0].gun) return done(new Error('Missing association'));
+        done();
+      });
     });
   });
   describe('Many to Many', function() {

@@ -4,7 +4,7 @@ module.exports = {
       type: 'string'
     },
     ammo: {
-      type: 'number'
+      type: 'integer'
     }, 
     players: {
       collection: 'player',
