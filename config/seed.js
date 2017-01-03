@@ -1,5 +1,5 @@
 module.exports.seed = {
-  locations : {
+  databases : {
     test: {
       user: {
         scheme: [
