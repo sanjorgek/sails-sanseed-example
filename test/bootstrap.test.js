@@ -27,5 +27,9 @@ after(function(done) {
 });
 
 beforeEach(function(done) {
-  done();
+  sails.seed.seedAll('test', done);
+});
+
+afterEach(function(done) {
+  sails.seed.dropAll(done);
 });
