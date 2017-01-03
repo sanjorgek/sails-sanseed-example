@@ -25,7 +25,14 @@ describe('Associations', function() {
   });
   describe('Many to Many', function() {
     it('should create many players with many clans', function(done) {
-      done();
+      Player.find({})
+      .populate('clans')
+      .exec(function(err, playerFounded) {
+        if(err) return done(err);
+        if(playerFounded==[]) return done(new Error('Missing record'));
+        if(playerFounded[0].clans.length!=2) return done(new Error('Missing association'));
+        done();
+      });
     });
   });
 });

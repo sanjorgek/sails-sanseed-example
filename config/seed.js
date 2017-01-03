@@ -25,6 +25,21 @@ module.exports.seed = {
         },
         migrate: 'drop'
       },
+      clan: {
+        scheme:[
+          {
+            data: {
+              name: 'Boffin'
+            }
+          },
+          {
+            data: {
+              name: 'Proudfoot'
+            }
+          }
+        ],
+        migrate: 'drop'
+      },
       player: {
         scheme: [
           {
@@ -39,6 +54,12 @@ module.exports.seed = {
               gun: {
                 ammo: {'>': 15}
               }
+            },
+            manyTo: {
+              clans: [
+                {name: "Boffin"},
+                {name: "Proudfoot"}                
+              ]
             }
           }
         ],

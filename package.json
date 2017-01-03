@@ -22,7 +22,7 @@
     "rc": "1.0.1",
     "sails": "~0.12.4",
     "sails-disk": "~0.10.9",
-    "sails-hook-sanseed": "sanjorgek/sails-hook-sanseed#bc7d05a916d53f7939edde9dec144855bff81422"
+    "sails-hook-sanseed": "sanjorgek/sails-hook-sanseed#c0e3caff14af0ce4b9f5c186fcbee2a475cd9408"
   },
   "scripts": {
     "debug": "node debug app.js",
