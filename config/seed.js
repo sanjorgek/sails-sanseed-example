@@ -13,15 +13,13 @@ module.exports.seed = {
         migrate: 'drop'
       },
       gun: {
-        scheme: {
-          faker: {
-            format: {
-              name: "{{company.companyName}}",
-              ammo: "{{random.number}}"
-            },
-            locale: 'es_MX',
-            quantity: 10
-          }
+        faker: {
+          format: {
+            name: "{{company.companyName}}",
+            ammo: Math.round(Math.random()*10+6)
+          },
+          locale: 'es_MX',
+          quantity: 10
         },
         migrate: 'drop'
       },
@@ -29,54 +27,54 @@ module.exports.seed = {
         scheme:[
           {
             data: {
-              name: 'Boffin'
+              name: 'Boffin',
+              location: 'México'
             }
           },
           {
             data: {
               name: 'Proudfoot'
+            },
+            faker: {
+              location: "{{address.state}}"
             }
           }
         ],
         migrate: 'drop'
       },
       player: {
-        scheme: [
-          {
-            data: {
-              username: "sailor",
-              password: "1234567890987654321"
+        faker: {
+          format: {
+            username: "{{internet.userName}}",
+            password: "{{internet.password}}"
+          },
+          oneTo: {
+            user: {
+              name: "juan paco"
             },
-            oneTo: {
-              user: {
-                name: "juan paco"
-              },
-              gun: {
-                ammo: {'>': 15}
-              }
-            },
-            manyTo: {
-              clans: [
-                {name: "Boffin"},
-                {name: "Proudfoot"}                
-              ]
+            gun: {
+              ammo: {'>': 5}
             }
+          },
+          manyTo: {
+            clans: [
+              {name: "Boffin"},
+              {name: "Proudfoot"}                
+            ]
           }
-        ],
+        },
         migrate: 'drop'
       }
     },
     faker: {
       user: {
-        scheme: {
-          faker: {
-            format: {
-              name: "{{name.firstName}}",
-              lastName: "{{name.lastName}}"
-            },
-            locale: 'es_MX',
-            quantity: 10
-          }
+        faker: {
+          format: {
+            name: "{{name.firstName}}",
+            lastName: "{{name.lastName}}"
+          },
+          locale: 'es_MX',
+          quantity: 10
         },
         migrate: 'drop'
       }

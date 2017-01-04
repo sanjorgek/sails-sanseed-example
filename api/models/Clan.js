@@ -3,6 +3,9 @@ module.exports = {
     name: {
       type: 'string'
     },
+    location: {
+      type: 'string'
+    },
     players: {
       collection: 'player',
       via: 'clans',
